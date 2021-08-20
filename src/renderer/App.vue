@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <el-container>
-      <el-header id="header-title" height="30px">
-        电池健康状态分析软件
+      <el-header class="header-title" height="30px">
+<!--        电池健康状态分析软件-->
         <title-button type="min"/>
         <title-button type="max"/>
         <title-button type="close"/>
@@ -19,11 +19,13 @@
             <basic-info></basic-info>
           </div>
         </el-container>
-        <el-aside width="345px">
+        <el-aside width="342px">
           <event-info></event-info>
         </el-aside>
       </el-container>
-      <el-footer height="30px">Footer</el-footer>
+      <el-footer height="30px">
+        <div class="footer-info">版权所有© 2011 All Right Reserved 同方威视技术股份有限公司</div>
+      </el-footer>
     </el-container>
   </div>
 </template>
@@ -82,25 +84,33 @@ html, body, #app, .el-container {
   /*line-height: 160px;*/
 }
 
-/*body > .el-container {*/
-/*  margin-bottom: 40px;*/
-/*}*/
+body > .el-container {
+  margin-bottom: 40px;
+}
 
-/*.el-container:nth-child(5) .el-aside,*/
-/*.el-container:nth-child(6) .el-aside {*/
-/*  line-height: 260px;*/
-/*}*/
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+  line-height: 260px;
+}
 
-/*.el-container:nth-child(7) .el-aside {*/
-/*  line-height: 100%;*/
-/*}*/
+.el-container:nth-child(7) .el-aside {
+  line-height: 100%;
+}
 
 /*标题栏*/
-#header-title {
+.header-title {
   /*position: absolute;*/
   width: 100%;
   height: 100%;
   -webkit-app-region: drag;
+}
+
+.batteryCurve {
+  /*height: 100%;*/
+}
+.footer-info{
+  font-family: "Microsoft YaHei UI",serif;
+  font-size: 14px;
 }
 
 </style>

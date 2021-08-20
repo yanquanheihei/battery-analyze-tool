@@ -47,12 +47,24 @@ export default {
         eventTime: '2016-05-03 16:28:41',
         eventName: '拉曼检测器',
         eventType: '关闭'
+      }, {
+        eventTime: '2016-05-03 16:28:41',
+        eventName: '痕量监测仪',
+        eventType: '关闭'
+      }, {
+        eventTime: '2016-05-03 16:28:41',
+        eventName: '蓝牙测温仪',
+        eventType: '关闭'
+      }, {
+        eventTime: '2016-05-03 16:28:41',
+        eventName: '拉曼检测器',
+        eventType: '关闭'
       }]
     }
   },
   methods: {
     tableHeaderStyle ({row, column, rowIndex, columnIndex}) {
-      return 'text-align:center;background-color:#f0f9eb;fontFamily:Helvetica;fontSize:14px'
+      return 'text-align:center;background-color:#D3DCE6;fontFamily:Helvetica;fontSize:14px'
     },
     tableCellStyle ({row, column, rowIndex, columnIndex}) {
       return 'text-align:center;color:#666;fontFamily:Arial;fontSize:12px'

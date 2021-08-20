@@ -1,17 +1,35 @@
 <template>
   <div class="block">
     <span class="demonstration"></span>
-    <el-carousel height="150px">
-      <el-carousel-item v-for="item in 4" :key="item">
-        <h3 class="small">{{ item }}</h3>
+    <el-carousel height="200px">
+      <!--      <el-carousel-item v-for="item in 4" :key="item">-->
+      <!--        <h3 class="small">{{ item }}</h3>-->
+      <!--      </el-carousel-item>-->
+      <el-carousel-item>
+        <card-view card-name="基础信息"></card-view>
       </el-carousel-item>
+<!--      <el-carousel-item>-->
+<!--        <card-view card-name="电池总电流"></card-view>-->
+<!--      </el-carousel-item>-->
+<!--      <el-carousel-item>-->
+<!--        <card-view card-name="空气检测器型号"></card-view>-->
+<!--      </el-carousel-item>-->
+<!--      <el-carousel-item>-->
+<!--        <card-view card-name="电子鼻运行时间"></card-view>-->
+<!--      </el-carousel-item>-->
     </el-carousel>
   </div>
 </template>
 
 <script>
+import CardView from './CardView'
+
 export default {
-  name: 'BasicInfo'
+  name: 'BasicInfo',
+  components: {CardView},
+  comments: {
+    'card-view': CardView
+  }
 }
 </script>
 
@@ -31,7 +49,8 @@ export default {
 .el-carousel__item:nth-child(2n+1) {
   background-color: #d3dce6;
 }
-.demonstration{
+
+.demonstration {
   font-size: 13px;
 }
 </style>

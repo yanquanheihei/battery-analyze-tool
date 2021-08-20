@@ -59,7 +59,7 @@ export default {
         series: [{
           name: '电量',
           symbol: 'circle',
-          data: [820, 932, 901, 934, 1290, 1330, 1320],
+          data: [820, 932, 901, 934, 1290, 1330, 800],
           type: 'line',
           smooth: true,
           areaStyle: {
@@ -77,7 +77,9 @@ export default {
       let chartDom = document.getElementById('demo')
       let myChart = this.$echarts.init(chartDom)
       myChart.setOption(this.option)
-      myChart.resize()
+      window.addEventListener('resize', () => {
+        myChart.resize()
+      })
     }
   }
 }
@@ -87,6 +89,7 @@ export default {
 #demo {
   margin: 0 auto;
   width: 100%;
-  height: 300px;
+  height: 500px;
+  background-color: #E9EEF3;
 }
 </style>

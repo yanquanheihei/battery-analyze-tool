@@ -21,7 +21,6 @@
           <el-tree
               :data="data"
               :props="defaultProps"
-              accordion
               @node-click="handleNodeClick">
           </el-tree>
         </div>
@@ -39,41 +38,24 @@ export default {
     return {
       data: [
         {
-          label: '一级 1',
-          children: [{
-            label: '二级 1-1',
-            children: [{
-              label: '三级 1-1-1'
-            }]
-          }]
+          label: '2021-06-11',
+          children: [{label: '15:33:21'}, {label: '18:33:21'}, {label: '20:33:21'}, {label: '23:33:21'}]
         },
         {
-          label: '一级 2',
-          children: [{
-            label: '二级 2-1',
-            children: [{
-              label: '三级 2-1-1'
-            }]
-          }, {
-            label: '二级 2-2',
-            children: [{
-              label: '三级 2-2-1'
-            }]
-          }]
+          label: '2021-07-19',
+          children: [{label: '15:33:21'}, {label: '18:33:21'}, {label: '20:33:21'}, {label: '23:33:21'}]
         },
         {
-          label: '一级 3',
-          children: [{
-            label: '二级 3-1',
-            children: [{
-              label: '三级 3-1-1'
-            }]
-          }, {
-            label: '二级 3-2',
-            children: [{
-              label: '三级 3-2-1'
-            }]
-          }]
+          label: '2021-08-01',
+          children: [{label: '15:33:21'}, {label: '18:33:21'}, {label: '20:33:21'}, {label: '23:33:21'}]
+        },
+        {
+          label: '2021-08-13',
+          children: [{label: '15:33:21'}, {label: '18:33:21'}, {label: '20:33:21'}, {label: '23:33:21'}]
+        },
+        {
+          label: '2021-08-21',
+          children: [{label: '15:33:21'}, {label: '18:33:21'}, {label: '20:33:21'}, {label: '23:33:21'}]
         }
       ],
       defaultProps: {
@@ -101,8 +83,8 @@ export default {
   grid-template-areas:
       "button button"
       "list list";
-      /*"eventTime-picker eventTime-picker"*/
-      /*"tree tree";*/
+  /*"eventTime-picker eventTime-picker"*/
+  /*"tree tree";*/
   grid-template-rows: 1fr 7fr;
   grid-gap: 10px;
 }
@@ -114,7 +96,7 @@ export default {
   /*border-bottom: 1px solid skyblue;*/
 }
 
-.list-container{
+.list-container {
   margin: 0 auto;
   grid-area: list;
   border-top: 1px solid skyblue;
