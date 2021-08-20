@@ -3,7 +3,7 @@
     <el-card class="box-card">
       <div slot="header" class="clearfix">
         <span class="title">{{ cardName }}</span>
-        <el-button style="float: right; padding: 3px 0" type="text">信息导出</el-button>
+        <el-button style="float: right; padding: 3px 0" type="text">下一页</el-button>
       </div>
       <!--      <div v-for="o in 4" :key="o" class="text item">-->
       <!--        {{ '列表内容 ' + o }}-->

@@ -2,7 +2,7 @@
   <div id="app">
     <el-container>
       <el-header class="header-title" height="30px">
-<!--        电池健康状态分析软件-->
+        电池健康状态分析软件
         <title-button type="min"/>
         <title-button type="max"/>
         <title-button type="close"/>
@@ -110,7 +110,7 @@ body > .el-container {
 }
 .footer-info{
   font-family: "Microsoft YaHei UI",serif;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 </style>
