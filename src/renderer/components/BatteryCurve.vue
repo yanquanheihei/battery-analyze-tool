@@ -47,7 +47,7 @@ export default {
           },
           type: 'value',
           axisLabel: {
-            formatter: '{value}(v)'
+            formatter: '{value}(%)'
           }
         },
         grid: {
@@ -59,7 +59,7 @@ export default {
         series: [{
           name: '电量',
           symbol: 'circle',
-          data: [820, 932, 901, 934, 1290, 1330, 800],
+          data: [33, 44, 66, 89, 77, 78, 63],
           type: 'line',
           smooth: true,
           areaStyle: {

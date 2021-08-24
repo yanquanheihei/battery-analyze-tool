@@ -1,6 +1,6 @@
 'use strict'
 
-import {app, BrowserWindow, ipcMain} from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
 
 const ipc = ipcMain
 /**
@@ -8,13 +8,16 @@ const ipc = ipcMain
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
  */
 if (process.env.NODE_ENV !== 'development') {
-  global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
+  global.__static = require('path')
+    .join(__dirname, '/static')
+    .replace(/\\/g, '\\\\')
 }
 
 let mainWindow
-const winURL = process.env.NODE_ENV === 'development'
-  ? `http://localhost:9080`
-  : `file://${__dirname}/index.html`
+const winURL =
+  process.env.NODE_ENV === 'development'
+    ? `http://localhost:9080`
+    : `file://${__dirname}/index.html`
 
 function createWindow () {
   /**
@@ -33,7 +36,8 @@ function createWindow () {
     }
   }
 
-  if (process.platform === 'win32') { // 针对windows平台做出不同的配置
+  if (process.platform === 'win32' || process.platform === 'linux') {
+    // 针对windows平台做出不同的配置
     options.show = true // 创建即展示
     options.frame = false // 创建一个frameless窗口
   }
