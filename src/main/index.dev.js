@@ -9,15 +9,19 @@
 
 // Install `electron-debug` with `devtron`
 require('electron-debug')({ showDevTools: true })
+import {  BrowserWindow } from 'electron';
 
 // Install `vue-devtools`
 require('electron').app.on('ready', () => {
   let installExtension = require('electron-devtools-installer')
-  installExtension.default(installExtension.VUEJS_DEVTOOLS)
-    .then(() => {})
-    .catch(err => {
-      console.log('Unable to install `vue-devtools`: \n', err)
-    })
+  // installExtension.default(installExtension.VUEJS_DEVTOOLS)
+  //   .then(() => {})
+  //   .catch(err => {
+  //     console.log('Unable to install `vue-devtools`: \n', err)
+  //   })
+
+  // 手动加载vue-devtools，前提是 npm install vue-devtools --save-dev
+  BrowserWindow.addDevToolsExtension('node_modules/vue-devtools/vender')  
 })
 
 // Require `main` process to boot app
