@@ -89,7 +89,7 @@ export default {
 #demo {
   margin: 0 auto;
   width: 100%;
-  height: 500px;
+  height: 555px;
   background-color: #E9EEF3;
 }
 </style>

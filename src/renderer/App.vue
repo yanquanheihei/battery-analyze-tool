@@ -105,9 +105,6 @@ body > .el-container {
   -webkit-app-region: drag;
 }
 
-.batteryCurve {
-  /*height: 100%;*/
-}
 .footer-info{
   font-family: "Microsoft YaHei UI",serif;
   font-size: 12px;

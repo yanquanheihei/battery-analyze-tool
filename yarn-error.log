@@ -1,0 +1,139 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\wangzhiyong\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  D:\Program Files\VMware Workstation 16.1.2 Player\install files\bin\;C:\Python39\Scripts\;C:\Python39\;C:\Python38\Scripts\;C:\Python38\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\WINDOWS\System32\OpenSSH\;D:\Program Files\新建文件夹\win7master_ttrar;C:\P;C:\Python27;C:\Python27\Scripts;D:\Program Files\Emgu-cv\bin;D:\Program Files\CMake\bin;D:\TFIVT_BS\apache-tomcat-7.0.54;D:\TFIVT_BS\apache-tomcat-7.0.54\jdk1.7.0_05\jre\bin;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Java\jdk1.8.0_201\bin;C:\Program Files\Java\jdk1.8.0_201\jre\bin;D:\Program Files\MongoDB\InstallFiles\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\ProgramData\chocolatey\bin;D:\Program Files\Nuget;D:\Program Files\PuTTY\;D:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\dotnet\;d:\Program Files\Git\cmd;D:\Program Files\VisualSVN Server\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\nodejs\;C:\Python38\Scripts\;C:\Python38\;C:\Python38-32\Scripts\;C:\Python38-32\;C:\Users\wangzhiyong\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Fiddler;C:\Users\wangzhiyong\.dotnet\tools;C:\Users\wangzhiyong\AppData\Local\BypassRuntm;C:\Users\wangzhiyong\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\wangzhiyong\.dotnet\tools;C:\Users\wangzhiyong\.dotnet\tools;C:\Program Files\JetBrains\WebStorm 2021.1.3\bin;;C:\Users\wangzhiyong\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.17.2
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: unexpected end of file
+      at Zlib.zlibOnError [as onerror] (zlib.js:188:17)
+
+npm manifest: 
+  {
+    "name": "battery-analyze-tool",
+    "version": "0.0.1",
+    "author": "wzy",
+    "description": "Battery health analysis tool",
+    "license": "GPL",
+    "main": "./dist/electron/main.js",
+    "scripts": {
+      "build": "node .electron-vue/build.js && electron-builder",
+      "build:dir": "node .electron-vue/build.js && electron-builder --dir",
+      "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
+      "build:web": "cross-env BUILD_TARGET=web node .electron-vue/build.js",
+      "dev": "node .electron-vue/dev-runner.js",
+      "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src",
+      "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix src",
+      "pack": "npm run pack:main && npm run pack:renderer",
+      "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
+      "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
+      "postinstall": "npm run lint:fix"
+    },
+    "build": {
+      "productName": "battery-analyze-tool",
+      "appId": "com.example.yourapp",
+      "directories": {
+        "output": "build"
+      },
+      "files": [
+        "dist/electron/**/*"
+      ],
+      "dmg": {
+        "contents": [
+          {
+            "x": 410,
+            "y": 150,
+            "type": "link",
+            "path": "/Applications"
+          },
+          {
+            "x": 130,
+            "y": 150,
+            "type": "file"
+          }
+        ]
+      },
+      "mac": {
+        "icon": "build/icons/icon.icns"
+      },
+      "win": {
+        "icon": "build/icons/icon.ico"
+      },
+      "linux": {
+        "icon": "build/icons"
+      }
+    },
+    "dependencies": {
+      "axios": "^0.18.0",
+      "echarts": "^5.1.2",
+      "element-ui": "^2.15.5",
+      "vue": "^2.5.16",
+      "vue-electron": "^1.0.6",
+      "vuex": "^3.0.1"
+    },
+    "devDependencies": {
+      "@types/swiper": "^5.4.3",
+      "ajv": "^6.5.0",
+      "babel-core": "^6.26.3",
+      "babel-eslint": "^8.2.3",
+      "babel-loader": "^7.1.4",
+      "babel-minify-webpack-plugin": "^0.3.1",
+      "babel-plugin-transform-runtime": "^6.23.0",
+      "babel-preset-env": "^1.7.0",
+      "babel-preset-stage-0": "^6.24.1",
+      "babel-register": "^6.26.0",
+      "cfonts": "^2.1.2",
+      "chalk": "^2.4.1",
+      "copy-webpack-plugin": "^4.5.1",
+      "cross-env": "^5.1.6",
+      "css-loader": "^0.28.11",
+      "del": "^3.0.0",
+      "devtron": "^1.4.0",
+      "electron": "^2.0.4",
+      "electron-builder": "^20.19.2",
+      "electron-debug": "^1.5.0",
+      "electron-devtools-installer": "^2.2.4",
+      "eslint": "^4.19.1",
+      "eslint-config-standard": "^11.0.0",
+      "eslint-friendly-formatter": "^4.0.1",
+      "eslint-loader": "^2.0.0",
+      "eslint-plugin-html": "^4.0.3",
+      "eslint-plugin-import": "^2.12.0",
+      "eslint-plugin-node": "^6.0.1",
+      "eslint-plugin-promise": "^3.8.0",
+      "eslint-plugin-standard": "^3.1.0",
+      "file-loader": "^1.1.11",
+      "html-webpack-plugin": "^3.2.0",
+      "listr": "^0.14.3",
+      "mini-css-extract-plugin": "0.4.0",
+      "node-loader": "^0.6.0",
+      "style-loader": "^0.21.0",
+      "swiper": "^3.4.2",
+      "url-loader": "^1.0.1",
+      "vue-devtools": "^5.1.4",
+      "vue-html-loader": "^1.2.4",
+      "vue-loader": "^15.2.4",
+      "vue-style-loader": "^4.1.0",
+      "vue-template-compiler": "^2.5.16",
+      "webpack": "^4.15.1",
+      "webpack-cli": "^3.0.8",
+      "webpack-dev-server": "^3.1.4",
+      "webpack-hot-middleware": "^2.22.2",
+      "webpack-merge": "^4.1.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  
