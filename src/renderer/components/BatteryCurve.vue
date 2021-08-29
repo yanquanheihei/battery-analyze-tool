@@ -57,7 +57,7 @@ export default {
           containLabel: true
         },
         series: [{
-          name: '电量',
+          name: '电量（%）',
           symbol: 'circle',
           data: [33, 44, 66, 89, 77, 78, 63],
           type: 'line',

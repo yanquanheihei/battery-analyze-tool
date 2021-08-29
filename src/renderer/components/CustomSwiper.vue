@@ -17,11 +17,11 @@ export default {
     new Swiper('.basicinfoswiper', {
       loop: true,
       speed: 3000,
-      autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-        reverseDirection: false
-      },
+      // autoplay: {
+      //   delay: 2000,
+      //   disableOnInteraction: false,
+      //   reverseDirection: false
+      // },
       pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
