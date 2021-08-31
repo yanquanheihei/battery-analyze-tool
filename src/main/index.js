@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, BrowserWindow, ipcMain } from 'electron'
+import { app, BrowserWindow, ipcMain, dialog } from 'electron'
 
 const ipc = ipcMain
 /**
@@ -79,6 +79,14 @@ ipc.on('max', () => {
 
 ipc.on('close', () => {
   mainWindow.close()
+})
+
+ipc.on('open-directory-dialog', (event, p) => {
+  dialog.showOpenDialog(mainWindow, {title: '请选择电池数据所在文件夹……', properties: [p]}, (directores) => {
+    if (directores) {
+      event.sender.send('selectedItem', directores[0])
+    }
+  })
 })
 
 /**

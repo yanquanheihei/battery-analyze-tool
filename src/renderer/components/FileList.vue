@@ -19,7 +19,7 @@
         </div>
         <div class="tree-container">
           <el-tree
-              :data="data"
+              :data="folderData"
               :props="defaultProps"
               @node-click="handleNodeClick">
           </el-tree>
@@ -32,32 +32,12 @@
 </template>
 
 <script>
+import {ipcRenderer} from 'electron'
 export default {
   name: 'FileList',
   data () {
     return {
-      data: [
-        {
-          label: '2021-06-11',
-          children: [{label: '15:33:21'}, {label: '18:33:21'}, {label: '20:33:21'}, {label: '23:33:21'}]
-        },
-        {
-          label: '2021-07-19',
-          children: [{label: '15:33:21'}, {label: '18:33:21'}, {label: '20:33:21'}, {label: '23:33:21'}]
-        },
-        {
-          label: '2021-08-01',
-          children: [{label: '15:33:21'}, {label: '18:33:21'}, {label: '20:33:21'}, {label: '23:33:21'}]
-        },
-        {
-          label: '2021-08-13',
-          children: [{label: '15:33:21'}, {label: '18:33:21'}, {label: '20:33:21'}, {label: '23:33:21'}]
-        },
-        {
-          label: '2021-08-21',
-          children: [{label: '15:33:21'}, {label: '18:33:21'}, {label: '20:33:21'}, {label: '23:33:21'}]
-        }
-      ],
+      folderData: [],
       defaultProps: {
         children: 'children',
         label: 'label'
@@ -67,7 +47,38 @@ export default {
   },
   methods: {
     addFolder () {
-      alert('hello')
+      let ipc = ipcRenderer
+      ipc.send('open-directory-dialog', 'openDirectory')
+
+      let curFolderData = []
+      ipc.once('selectedItem', (event, rootPath) => {
+        this.$axios.get('http://localhost:5000/BatteryDatas/folderStruct', {
+          params: {
+            path: rootPath
+          }
+        }).then((response) => {
+          let parents = response.data.parents
+
+          parents.forEach(parentFolder => {
+            let parent
+            let childrens = []
+
+            parentFolder.subFolders.forEach(subFolder => {
+              childrens.push({label: subFolder.slice(subFolder.lastIndexOf('\\') + 1)})
+            })
+            parent = {
+              label: parentFolder.parentName.slice(parentFolder.parentName.lastIndexOf('\\') + 1),
+              children: childrens
+            }
+
+            curFolderData.push(parent)
+          })
+        }).catch((error) => {
+          console.log(error)
+        })
+      })
+
+      this.folderData = curFolderData
     },
     handleNodeClick () {
     }
